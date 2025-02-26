@@ -1,0 +1,67 @@
+/// Mixins globales para mejorar la reutilización del código en el proyecto.
+/// @group Mixins
+
+/// Centra un elemento usando Flexbox.
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/// Distribuye los elementos de un contenedor con `space-between` usando Flexbox.
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/// Define un contenedor con un ancho máximo y padding lateral.
+/// @requires $container-width
+/// @requires $spacing-unit
+@mixin container {
+  width: 100%;
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 0 $spacing-unit * 2;
+}
+
+/// Mixin para estilos de botones personalizados.
+/// @param {Color} $bg-color - Color de fondo del botón (por defecto `$primary-color`).
+/// @param {Color} $text-color - Color del texto del botón (por defecto `$light-color`).
+/// @requires $spacing-unit
+/// @requires $border-radius
+/// @requires $transition-default
+@mixin btn($bg-color: $primary-color, $text-color: $light-color) {
+  display: inline-block;
+  background-color: $bg-color;
+  color: $text-color;
+  padding: $spacing-unit $spacing-unit * 2;
+  border-radius: $border-radius;
+  font-weight: bold;
+  text-decoration: none;
+  transition: $transition-default;
+  cursor: pointer;
+  border: none;
+  
+  &:hover {
+    background-color: darken($bg-color, 10%);
+  }
+}
+
+/// Mixin para aplicar estilos responsivos según el tamaño de pantalla.
+/// @param {String} $breakpoint - Nombre del breakpoint (`sm`, `md`, `lg`, `xl`).
+/// @requires $breakpoint-sm
+/// @requires $breakpoint-md
+/// @requires $breakpoint-lg
+/// @requires $breakpoint-xl
+@mixin responsive($breakpoint) {
+  @if $breakpoint == sm {
+    @media (min-width: $breakpoint-sm) { @content; }
+  } @else if $breakpoint == md {
+    @media (min-width: $breakpoint-md) { @content; }
+  } @else if $breakpoint == lg {
+    @media (min-width: $breakpoint-lg) { @content; }
+  } @else if $breakpoint == xl {
+    @media (min-width: $breakpoint-xl) { @content; }
+  }
+}

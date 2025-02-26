@@ -1,0 +1,27 @@
+// Archivo principal SCSS donde importamos todos los partials
+@import'base/variables';
+@import 'base/mixins';
+@import 'base/global';
+@import 'components/buttons';
+@import 'components/cards';
+@import 'components/navbar';
+@import 'components/footer';
+@import 'layouts/header';
+@import 'layouts/hero';
+@import 'layouts/sections';
+
+/* Base/_reset.scss */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: 'Arial', sans-serif;
+  }
+
+
+  

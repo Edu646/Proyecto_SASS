@@ -1,0 +1,36 @@
+// _sections.scss (layouts/sections)
+.estrenos, .resenas {
+    padding: $spacing-unit * 5 0;
+    @include container;
+    
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      
+      .carousel-inner {
+        display: flex;
+        transition: transform 0.5s ease;
+        
+        .carousel-item {
+          min-width: 100%;
+          transition: $transition-default;
+          
+          @include responsive(md) {
+            min-width: 50%;
+          }
+          
+          @include responsive(lg) {
+            min-width: 33.333333%;
+          }
+        }
+      }
+    }
+  }
+  
+  .estrenos {
+    background-color: rgba($light-color, 0.9);
+  }
+  
+  .resenas {
+    background-color: rgba($secondary-color, 0.1);
+  }

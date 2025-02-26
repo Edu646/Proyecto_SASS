@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Películas</title>
+    <link rel="stylesheet" href="./SCSS/Style.css">
+    
+</head>
+<body>
+    <header>
+        <nav class="nav-principal">
+            <div class="logo"><img src="./IMG O VID/Rimberio.png" alt="Logo"></div>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Películas</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <div class="main-wrapper">
+        <div class="video-container">
+            <video autoplay muted loop class="background-video">
+                <source src="./IMG O VID/7233576-uhd_2560_1080_25fps.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+            
+            <nav class="nav-alternativa">
+                <ul>
+                    <li><a href="#">Categorías</a></li>
+                    <li><a href="#">Ayuda</a></li>
+                    <li><a href="#">Centro de Propuestas</a></li>
+                </ul>
+            </nav>
+            
+            <div class="info-section">
+                <div class="about-us">
+                    <h2>¿Quiénes Somos?</h2>
+                    <p>Somos una plataforma apasionada por el cine, dedicada a ofrecer una experiencia única para los amantes de las películas.</p>
+                </div>
+                <div class="purpose">
+                    <h2>Nuestro Propósito</h2>
+                    <p>Brindar acceso a las mejores películas, reseñas y recomendaciones, para que disfrutes del mejor contenido cinematográfico.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="estrenos">
+        <h2>Películas Estrenadas</h2>
+        <div class="carousel" id="carouselEstrenos">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="imagen">
+                       <img src="./IMG O VID/Damsel.jpg" alt="">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="imagen">
+                        <img src="./IMG O VID/Gladiator.jpg" alt="">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="imagen" >
+                        <img src="./IMG O VID/las-cronicas-de-narnia-66ca0a8ab3845.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev">&#9664;</button>
+            <button class="carousel-control-next">&#9654;</button>
+        </div>
+    </section>
+
+
+
+    <div class="movie-container">
+        <h1>Peliculas del dia</h1>
+        <div class="top-row">
+            <div class="column active" onclick="changeTab(0)">Inception</div>
+            <div class="column" onclick="changeTab(1)">The Dark Knight</div>
+            <div class="column" onclick="changeTab(2)">Interstellar</div>
+        </div>
+        <div class="content-area">
+            <div class="movie-preview">
+                <div class="movie-poster" id="currentPoster">
+                    <img src="./IMG O VID/inception.jpeg" alt="Poster de película">
+                </div>
+                <div class="movie-info">
+                    <h2 id="currentTitle">Inception</h2>
+                    <div class="movie-rating">
+                        <span class="star active"></span>
+                        <span class="star active"></span>
+                        <span class="star active"></span>
+                        <span class="star active"></span>
+                        <span class="star"></span>
+                        <span class="rating-value">8.8</span>
+                    </div>
+                    <p id="currentDescription" class="movie-description">Un ladrón que roba secretos corporativos a través del uso de la tecnología de compartir sueños, se le da la tarea inversa de plantar una idea en la mente de un CEO.</p>
+                    <div class="movie-actions">
+                        <button class="btn-watch" onclick="showMessage('Reproduciendo Inception')">Ver ahora</button>
+                        <button class="btn-save" onclick="showMessage('Película guardada en tu lista')">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-content active" id="tab0">
+            <div class="movie-details">
+                <div class="movie-section">
+                    <h3>Sinopsis</h3>
+                    <p>Dom Cobb es un ladrón con una extraña habilidad para entrar a los sueños de la gente y robarles los secretos de sus subconscientes. Su habilidad lo ha vuelto muy popular en el mundo del espionaje corporativo pero ha tenido un gran costo en la gente que ama. Cobb obtiene la oportunidad de redimirse cuando recibe una tarea imposible: plantar una idea en la mente de una persona. Si tiene éxito, será el crimen perfecto, pero un enemigo que parece predecir cada uno de sus movimientos intenta detenerlo.</p>
+                </div>
+                <div class="movie-section">
+                    <h3>Reparto</h3>
+                    <ul class="cast-list">
+                        <li>Leonardo DiCaprio</li>
+                        <li>Joseph Gordon-Levitt</li>
+                        <li>Ellen Page</li>
+                        <li>Tom Hardy</li>
+                        <li>Ken Watanabe</li>
+                    </ul>
+                </div>
+                <div class="movie-section">
+                    <h3>Director</h3>
+                    <p>Christopher Nolan</p>
+                </div>
+            </div>
+        </div>
+        <div class="tab-content" id="tab1">
+            <div class="movie-details">
+                <div class="movie-section">
+                    <h3>Sinopsis</h3>
+                    <p>Con la ayuda del teniente Jim Gordon y del Fiscal del Distrito Harvey Dent, Batman mantiene a raya el crimen organizado en Gotham. Todo cambia cuando aparece el Joker, un nuevo criminal que desencadena el caos y tiene aterrados a los ciudadanos. Batman parece ser el único capaz de hacerle frente al Joker y regresa a la acción de manera impactante.</p>
+                </div>
+                <div class="movie-section">
+                    <h3>Reparto</h3>
+                    <ul class="cast-list">
+                        <li>Christian Bale</li>
+                        <li>Heath Ledger</li>
+                        <li>Aaron Eckhart</li>
+                        <li>Michael Caine</li>
+                        <li>Gary Oldman</li>
+                    </ul>
+                </div>
+                <div class="movie-section">
+                    <h3>Director</h3>
+                    <p>Christopher Nolan</p>
+                </div>
+            </div>
+        </div>
+        <div class="tab-content" id="tab2">
+            <div class="movie-details">
+                <div class="movie-section">
+                    <h3>Sinopsis</h3>
+                    <p>Un grupo de exploradores aprovecha un agujero de gusano recientemente descubierto para superar las limitaciones de los viajes espaciales tripulados y vencer las inmensas distancias que tiene un viaje interestelar. Su objetivo es encontrar un nuevo hogar para la humanidad, cuya supervivencia está en peligro debido a la grave escasez de recursos en la Tierra.</p>
+                </div>
+                <div class="movie-section">
+                    <h3>Reparto</h3>
+                    <ul class="cast-list">
+                        <li>Matthew McConaughey</li>
+                        <li>Anne Hathaway</li>
+                        <li>Jessica Chastain</li>
+                        <li>Michael Caine</li>
+                        <li>Mackenzie Foy</li>
+                    </ul>
+                </div>
+                <div class="movie-section">
+                    <h3>Director</h3>
+                    <p>Christopher Nolan</p>
+                </div>
+            </div>
+        </div>
+        <div class="message-box" id="messageBox">
+            Mensaje de interacción
+        </div>
+    </div>
+
+
+    
+    <section class="resenas">
+        <h2>Reseñas</h2>
+        <div class="carousel_1" id="carouselResenas">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="review">
+                        <p>"Nos importa tu opinión, deja tu reseña"</p>
+                        <div class="rating">★★★★★</div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="review">
+                        <p>"Excelente servicio y atención"</p>
+                        <div class="rating">★★★★☆</div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="review">
+                        <p>"Gran variedad de películas"</p>
+                        <div class="rating">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev">&#9664;</button>
+            <button class="carousel-control-next">&#9654;</button>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Sobre Nosotros</h5>
+                    <p>Somos una plataforma dedicada a ofrecer las mejores películas y reseñas para nuestros usuarios.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Enlaces Rápidos</h5>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Películas</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Categorías</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contacto</h5>
+                    <ul>
+                        <li><a href="mailto:info@peliculas.com">info@peliculas.com</a></li>
+                        <li><a href="tel:+123456789">+123 456 789</a></li>
+                        <li><a href="#">Dirección: Calle Falsa 123, Ciudad</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col text-center">
+                    <p>&copy; 2025 Películas. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Función para inicializar un carrusel
+        function initCarousel(carouselId) {
+            const carousel = document.getElementById(carouselId);
+            const items = carousel.querySelectorAll('.carousel-item');
+            const prevBtn = carousel.querySelector('.carousel-control-prev');
+            const nextBtn = carousel.querySelector('.carousel-control-next');
+            let currentIndex = 0;
+            
+            // Asegurarse de que solo un elemento esté activo
+            items.forEach((item, index) => {
+                if (index === 0) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+            
+            // Función para mostrar un elemento específico
+            function showItem(index) {
+                items.forEach(item => item.classList.remove('active'));
+                items[index].classList.add('active');
+                currentIndex = index;
+            }
+            
+            // Eventos para los botones de navegación
+            prevBtn.addEventListener('click', function() {
+                let newIndex = currentIndex - 1;
+                if (newIndex < 0) newIndex = items.length - 1;
+                showItem(newIndex);
+            });
+            
+            nextBtn.addEventListener('click', function() {
+                let newIndex = currentIndex + 1;
+                if (newIndex >= items.length) newIndex = 0;
+                showItem(newIndex);
+            });
+            
+            // Inicializar mostrando el primer elemento
+            showItem(0);
+        }
+        
+        // Inicializar ambos carruseles
+        initCarousel('carouselEstrenos');
+        initCarousel('carouselResenas');
+    });
+
+    const movies = [
+    {
+        title: "Inception",
+        img: "./IMG O VID/inception.jpeg",
+        description: "Un ladrón que roba secretos corporativos...",
+        rating: "8.8"
+    },
+    {
+        title: "The Dark Knight",
+        img: "./IMG O VID/dark_knight.jpeg",
+        description: "Con la ayuda del teniente Jim Gordon...",
+        rating: "9.0"
+    },
+    {
+        title: "Interstellar",
+        img: "./IMG O VID/interstellar.jpg",
+        description: "Un grupo de exploradores aprovecha un agujero de gusano...",
+        rating: "8.6"
+    }
+];
+
+function changeTab(index) {
+    document.querySelectorAll('.tab-content').forEach((tab, i) => {
+        tab.classList.toggle('active', i === index);
+    });
+
+    document.querySelectorAll('.top-row .column').forEach((col, i) => {
+        col.classList.toggle('active', i === index);
+    });
+
+    document.getElementById('currentPoster').querySelector('img').src = movies[index].img;
+    document.getElementById('currentTitle').textContent = movies[index].title;
+    document.getElementById('currentDescription').textContent = movies[index].description;
+    document.querySelector('.rating-value').textContent = movies[index].rating;
+}
+
+
+// Función para mostrar mensajes
+function showMessage(message) {
+    const messageBox = document.getElementById('messageBox');
+    messageBox.textContent = message;
+    messageBox.style.display = 'block';
+    messageBox.classList.add('visible');
+    
+    // Ocultar el mensaje después de 3 segundos
+    setTimeout(() => {
+        messageBox.classList.remove('visible');
+        setTimeout(() => {
+            messageBox.style.display = 'none';
+        }, 300);
+    }, 3000);
+}
+
+// Inicializar la interfaz cuando el documento esté listo
+document.addEventListener('DOMContentLoaded', () => {
+    // Configurar la primera película como activa
+    updateMoviePreview(0);
+});
+    </script>
+</body>
+</html>

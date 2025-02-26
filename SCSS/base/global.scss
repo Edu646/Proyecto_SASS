@@ -1,0 +1,106 @@
+/// Estilos globales y reset de la aplicación.
+/// @group Global
+
+/// Reset básico de márgenes, padding y box-sizing en todos los elementos.
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/// Estilos base para `html` y `body`, incluyendo tipografía y colores.
+/// @param {Number} $font-size-base - Tamaño base de la fuente.
+/// @param {String} $font-primary - Fuente principal.
+/// @param {Color} $text-color - Color del texto.
+html, body {
+  font-size: $font-size-base;
+  line-height: 1.5;
+  font-family: $font-primary;
+  color: $text-color;
+}
+
+/// Estilos base para los enlaces (`a`).
+/// Aplica una transición y cambia de color en el `hover`.
+/// @param {Color} $primary-color - Color principal de los enlaces.
+/// @param {Color} $secondary-color - Color de hover.
+/// @param {String} $transition-default - Efecto de transición en el hover.
+a {
+  text-decoration: none;
+  color: $primary-color;
+  transition: $transition-default;
+  
+  &:hover {
+    color: $secondary-color;
+  }
+}
+
+/// Remueve los estilos de lista en `ul`.
+ul {
+  list-style: none;
+}
+
+/// Estilos para imágenes, asegurando que sean responsivas.
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/// Estilos base para los títulos (`h1` - `h6`).
+/// @param {Number} $spacing-unit - Unidad de espaciado.
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: $spacing-unit * 2;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+/// Estilos específicos para `h2`.
+/// @param {Color} $primary-color - Color del título.
+/// @param {Number} $spacing-unit - Unidad de espaciado.
+h2 {
+  font-size: 2rem;
+  color: $primary-color;
+  text-align: center;
+  margin: $spacing-unit * 5 0 $spacing-unit * 3;
+}
+
+/// Contenedor principal con `max-width` definido.
+/// @param {Number} $container-width - Ancho máximo del contenedor.
+/// @param {Number} $spacing-unit - Unidad de espaciado.
+.container {
+  @include container;
+}
+
+/// Sistema de filas (`row`) con `flex-wrap` y márgenes negativos.
+/// Se utiliza para estructurar el diseño de columnas.
+/// @param {Number} $spacing-unit - Unidad de espaciado.
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -($spacing-unit * 2);
+  
+  /// Agrega un margen superior de `3 * spacing-unit`.
+  &.mt-3 {
+    margin-top: $spacing-unit * 3;
+  }
+}
+
+/// Clases para columnas, añadiendo padding lateral.
+/// @param {Number} $spacing-unit - Unidad de espaciado.
+[class*="col-"] {
+  padding: 0 $spacing-unit * 2;
+}
+
+/// Estilos para una columna de 4 en `md` (medianas pantallas).
+/// @param {String} $breakpoint - Punto de ruptura de pantalla (ej. `md`).
+.col-md-4 {
+  width: 100%;
+  
+  @include responsive(md) {
+    width: 33.333333%;
+  }
+}
+
+/// Clase de utilidad para centrar texto.
+.text-center {
+  text-align: center;
+}

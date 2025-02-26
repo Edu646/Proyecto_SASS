@@ -1,0 +1,95 @@
+/**
+ * @file Variables globales para estilos
+ */
+
+/// Color primario de la interfaz
+/// @group Colors
+$primary-color: #1a237e;
+
+/// Color secundario de la interfaz
+/// @group Colors
+$secondary-color: #7986cb;
+
+/// Color del texto principal
+/// @group Colors
+$text-color: #333;
+
+/// Color claro para fondos o textos
+/// @group Colors
+$light-color: #fff;
+
+/// Color oscuro para fondos o textos
+/// @group Colors
+$dark-color: #121212;
+
+/// Color de acento para elementos destacados
+/// @group Colors
+$accent-color: #ff4081;
+
+/// Fuente principal de la aplicación
+/// @group Typography
+$font-primary: 'Arial', sans-serif;
+
+/// Tamaño base de la fuente
+/// @group Typography
+$font-size-base: 16px;
+
+/// Unidad de espaciado base
+/// @group Layout
+$spacing-unit: 8px;
+
+/// Radio de borde para elementos con esquinas redondeadas
+/// @group Layout
+$border-radius: 4px;
+
+/// Transición por defecto para animaciones y cambios de estilo
+/// @group Effects
+$transition-default: all 0.3s ease;
+
+/// Ancho máximo del contenedor principal
+/// @group Layout
+$container-width: 1200px;
+
+/// Punto de quiebre para pantallas pequeñas (sm)
+/// @group Breakpoints
+$breakpoint-sm: 576px;
+
+/// Punto de quiebre para pantallas medianas (md)
+/// @group Breakpoints
+$breakpoint-md: 768px;
+
+/// Punto de quiebre para pantallas grandes (lg)
+/// @group Breakpoints
+$breakpoint-lg: 992px;
+
+/// Punto de quiebre para pantallas extra grandes (xl)
+/// @group Breakpoints
+$breakpoint-xl: 1200px;
+
+/// Color de texto ligero
+/// @group Colors
+$text-light: #757575;
+
+/// Color del borde
+/// @group Colors
+$border-color: #e0e0e0;
+
+/// Color de fondo al hacer hover
+/// @group Effects
+$hover-bg-color: #f5f5f5;
+
+/// Color de fondo activo
+/// @group Effects
+$active-bg-color: #e8eaf6;
+
+/// Duración de las transiciones
+/// @group Effects
+$transition-duration: 0.3s;
+
+/// Color del borde de los mensajes
+/// @group Messages
+$message-border-color: #d8d8d8;
+
+/// Color de fondo de los mensajes
+/// @group Messages
+$message-bg-color: #f9f9f9;
